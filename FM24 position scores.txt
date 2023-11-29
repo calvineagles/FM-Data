@@ -1,0 +1,704 @@
+Squirrel_plays code snippets - the 85 roles in FM24
+Goalkeeper defend	Enganche support
+Sweeper keeper defend support attack	Half back defend
+Ball playing defender defend stopper cover	Inside forward support attack
+Central defender defend stopper cover	Inverted winger support attack
+Complete wing back support attack	Mezzala support attack
+Full back defend support attack	Raumdeuter attack
+Inverted full back defend	Regista support
+Inverted wing back defend support attack	Roaming playmaker support
+Libero defend support	Segundo volante support attack
+No-nonsense centre back defend stopper cover	Shadow striker attack
+No-nonsense full back defend	Wide midfielder defend support attack
+Wide centre back defend support attack	Wide playmaker support attack
+Wing back defend support attack	Wide target forward support attack
+Advanced playmaker support attack	Winger support attack
+Anchor defend	Advanced forward attack
+Attacking midfielder support attack	Complete forward support attack
+Ball winning midfielder defend support	Deep lying forward support attack
+Box to box midfielder support	False nine support
+Carrilero support	Poacher attack
+Central midfielder defend support attack	Pressing forward defend support attack
+Deep lying playmaker defend support	Target forward support attack
+Defensive midfielder defend support	Trequartista attack
+Defensive winger defend support	
+Goalkeeper - defend
+# calculates Goalkeeper_Defend score
+squad_rawdata['gkd_key'] = ( squad_rawdata['Agi'] + squad_rawdata['Ref'] )
+squad_rawdata['gkd_green'] = ( squad_rawdata['Aer'] + squad_rawdata['Cmd'] + squad_rawdata['Han'] + squad_rawdata['Kic'] + squad_rawdata['Cnt'] + squad_rawdata['Pos'] )
+squad_rawdata['gkd_blue'] = ( squad_rawdata['1v1'] + squad_rawdata['Thr'] + squad_rawdata['Ant'] + squad_rawdata['Dec'] )
+squad_rawdata['gkd'] =( ( ( squad_rawdata['gkd_key'] * 5) + (squad_rawdata['gkd_green'] * 3) + (squad_rawdata['gkd_blue'] * 1) ) / 32)
+squad_rawdata.gkd= squad_rawdata.gkd.round(1)
+    
+Sweeper keeper - defend
+# calculates Sweeper_keeper_Defend score
+squad_rawdata['skd_key'] = ( squad_rawdata['Agi'] + squad_rawdata['Ref'] )
+squad_rawdata['skd_green'] = ( squad_rawdata['Cmd'] + squad_rawdata['Kic'] + squad_rawdata['1v1'] + squad_rawdata['Ant'] + squad_rawdata['Cnt'] + squad_rawdata['Pos'] )
+squad_rawdata['skd_blue'] = ( squad_rawdata['Aer'] + squad_rawdata['Fir'] + squad_rawdata['Han'] + squad_rawdata['Pas'] + squad_rawdata['TRO'] + squad_rawdata['Dec'] + squad_rawdata['Vis'] + squad_rawdata['Acc'] )
+squad_rawdata['skd'] =( ( ( squad_rawdata['skd_key'] * 5) + (squad_rawdata['skd_green'] * 3) + (squad_rawdata['skd_blue'] * 1) ) / 36)
+squad_rawdata.skd= squad_rawdata.skd.round(1)
+    
+Sweeper keeper - support
+# calculates Sweeper_keeper_Support score
+squad_rawdata['sks_key'] = ( squad_rawdata['Agi'] + squad_rawdata['Ref'] )
+squad_rawdata['sks_green'] = ( squad_rawdata['Cmd'] + squad_rawdata['Kic'] + squad_rawdata['1v1'] + squad_rawdata['Ant'] + squad_rawdata['Cnt'] + squad_rawdata['Pos'] )
+squad_rawdata['sks_blue'] = ( squad_rawdata['Aer'] + squad_rawdata['Fir'] + squad_rawdata['Han'] + squad_rawdata['Pas'] + squad_rawdata['TRO'] + squad_rawdata['Dec'] + squad_rawdata['Vis'] + squad_rawdata['Acc'] )
+squad_rawdata['sks'] =( ( ( squad_rawdata['sks_key'] * 5) + (squad_rawdata['sks_green'] * 3) + (squad_rawdata['sks_blue'] * 1) ) / 36)
+squad_rawdata.sks= squad_rawdata.sks.round(1)
+    
+Sweeper keeper - attack
+# calculates Sweeper_keeper_Attack score
+squad_rawdata['ska_key'] = ( squad_rawdata['Agi'] + squad_rawdata['Ref'] )
+squad_rawdata['ska_green'] = ( squad_rawdata['Cmd'] + squad_rawdata['Kic'] + squad_rawdata['1v1'] + squad_rawdata['Ant'] + squad_rawdata['Cnt'] + squad_rawdata['Pos'] )
+squad_rawdata['ska_blue'] = ( squad_rawdata['Aer'] + squad_rawdata['Fir'] + squad_rawdata['Han'] + squad_rawdata['Pas'] + squad_rawdata['TRO'] + squad_rawdata['Dec'] + squad_rawdata['Vis'] + squad_rawdata['Acc'] )
+squad_rawdata['ska'] =( ( ( squad_rawdata['ska_key'] * 5) + (squad_rawdata['ska_green'] * 3) + (squad_rawdata['ska_blue'] * 1) ) / 36)
+squad_rawdata.ska= squad_rawdata.ska.round(1)
+    
+Ball playing defender - defend
+# calculates Ball_playing_defender_Defend score
+squad_rawdata['bpdd_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Jum'] + squad_rawdata['Cmp'] )
+squad_rawdata['bpdd_green'] = ( squad_rawdata['Hea'] + squad_rawdata['Mar'] + squad_rawdata['Pas'] + squad_rawdata['Tck'] + squad_rawdata['Pos'] + squad_rawdata['Str'] )
+squad_rawdata['bpdd_blue'] = ( squad_rawdata['Fir'] + squad_rawdata['Tec'] + squad_rawdata['Agg'] + squad_rawdata['Ant'] + squad_rawdata['Bra'] + squad_rawdata['Cnt'] + squad_rawdata['Dec'] + squad_rawdata['Vis'] )
+squad_rawdata['bpdd'] =( ( ( squad_rawdata['bpdd_key'] * 5) + (squad_rawdata['bpdd_green'] * 3) + (squad_rawdata['bpdd_blue'] * 1) ) / 46)
+squad_rawdata.bpdd= squad_rawdata.bpdd.round(1)
+    
+Ball playing defender - stopper
+# calculates Ball_playing_defender_Stopper score
+squad_rawdata['bpds_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Jum'] + squad_rawdata['Cmp'] )
+squad_rawdata['bpds_green'] = ( squad_rawdata['Hea'] + squad_rawdata['Pas'] + squad_rawdata['Tck'] + squad_rawdata['Pos'] + squad_rawdata['Str'] + squad_rawdata['Agg'] + squad_rawdata['Bra'] + squad_rawdata['Dec'] )
+squad_rawdata['bpds_blue'] = ( squad_rawdata['Fir'] + squad_rawdata['Tec'] + squad_rawdata['Ant'] + squad_rawdata['Cnt'] + squad_rawdata['Vis'] + squad_rawdata['Mar'] )
+squad_rawdata['bpds'] =( ( ( squad_rawdata['bpds_key'] * 5) + (squad_rawdata['bpds_green'] * 3) + (squad_rawdata['bpds_blue'] * 1) ) / 50)
+squad_rawdata.bpds= squad_rawdata.bpds.round(1)
+    
+Ball playing defender - cover
+# calculates Ball_playing_defender_Cover score
+squad_rawdata['bpdc_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Jum'] + squad_rawdata['Cmp'] )
+squad_rawdata['bpdc_green'] = ( squad_rawdata['Mar'] + squad_rawdata['Pas'] + squad_rawdata['Tck'] + squad_rawdata['Pos'] + squad_rawdata['Ant'] + squad_rawdata['Cnt'] + squad_rawdata['Dec'] )
+squad_rawdata['bpdc_blue'] = ( squad_rawdata['Fir'] + squad_rawdata['Tec'] + squad_rawdata['Bra'] + squad_rawdata['Vis'] + squad_rawdata['Str'] + squad_rawdata['Hea'] )
+squad_rawdata['bpdc'] =( ( ( squad_rawdata['bpdc_key'] * 5) + (squad_rawdata['bpdc_green'] * 3) + (squad_rawdata['bpdc_blue'] * 1) ) / 47)
+squad_rawdata.bpdc= squad_rawdata.bpdc.round(1)
+    
+Central defender - defend
+# calculates Central_defender_Defend score
+squad_rawdata['cdd_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Jum'] + squad_rawdata['Cmp'] )
+squad_rawdata['cdd_green'] = ( squad_rawdata['Hea'] + squad_rawdata['Mar'] + squad_rawdata['Tck'] + squad_rawdata['Pos'] + squad_rawdata['Str'] )
+squad_rawdata['cdd_blue'] = ( squad_rawdata['Agg'] + squad_rawdata['Ant'] + squad_rawdata['Bra'] + squad_rawdata['Cnt'] + squad_rawdata['Dec'] )
+squad_rawdata['cdd'] =( ( ( squad_rawdata['cdd_key'] * 5) + (squad_rawdata['cdd_green'] * 3) + (squad_rawdata['cdd_blue'] * 1) ) / 40)
+squad_rawdata.cdd= squad_rawdata.cdd.round(1)
+    
+Central defender - stopper
+# calculates Central_defender_Stopper score
+squad_rawdata['cds_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Jum'] + squad_rawdata['Cmp'] )
+squad_rawdata['cds_green'] = ( squad_rawdata['Hea'] + squad_rawdata['Tck'] + squad_rawdata['Agg'] + squad_rawdata['Bra'] + squad_rawdata['Dec'] + squad_rawdata['Pos'] + squad_rawdata['Str'] )
+squad_rawdata['cds_blue'] = ( squad_rawdata['Mar'] + squad_rawdata['Ant'] + squad_rawdata['Cnt'] )
+squad_rawdata['cds'] =( ( ( squad_rawdata['cds_key'] * 5) + (squad_rawdata['cds_green'] * 3) + (squad_rawdata['cds_blue'] * 1) ) / 44)
+squad_rawdata.cds= squad_rawdata.cds.round(1)
+    
+Central defender - cover
+# calculates Central_defender_Cover score
+squad_rawdata['cdc_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Jum'] + squad_rawdata['Cmp'] )
+squad_rawdata['cdc_green'] = ( squad_rawdata['Mar'] + squad_rawdata['Tck'] + squad_rawdata['Ant'] + squad_rawdata['Cnt'] + squad_rawdata['Dec'] + squad_rawdata['Pos'] )
+squad_rawdata['cdc_blue'] = ( squad_rawdata['Hea'] + squad_rawdata['Bra'] + squad_rawdata['Str'] )
+squad_rawdata['cdc'] =( ( ( squad_rawdata['cdc_key'] * 5) + (squad_rawdata['cdc_green'] * 3) + (squad_rawdata['cdc_blue'] * 1) ) / 41)
+squad_rawdata.cdc= squad_rawdata.cdc.round(1)
+    
+Complete wing back - support
+# calculates Complete_wing_back_Support score
+squad_rawdata['cwbs_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['cwbs_green'] = ( squad_rawdata['Cro'] + squad_rawdata['Dri'] + squad_rawdata['Tec'] + squad_rawdata['OtB'] + squad_rawdata['Tea'] )
+squad_rawdata['cwbs_blue'] = ( squad_rawdata['Fir'] + squad_rawdata['Mar'] + squad_rawdata['Pas'] + squad_rawdata['Tck'] + squad_rawdata['Ant'] + squad_rawdata['Dec'] + squad_rawdata['Fla'] + squad_rawdata['Pos'] + squad_rawdata['Agi'] + squad_rawdata['Bal'] )
+squad_rawdata['cwbs'] =( ( ( squad_rawdata['cwbs_key'] * 5) + (squad_rawdata['cwbs_green'] * 3) + (squad_rawdata['cwbs_blue'] * 1) ) / 45)
+squad_rawdata.cwbs= squad_rawdata.cwbs.round(1)
+    
+Complete wing back - attack
+# calculates Complete_wing_back_Attack score
+squad_rawdata['cwba_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['cwba_green'] = ( squad_rawdata['Cro'] + squad_rawdata['Dri'] + squad_rawdata['Tec'] + squad_rawdata['Fla'] + squad_rawdata['OtB'] + squad_rawdata['Tea'] )
+squad_rawdata['cwba_blue'] = ( squad_rawdata['Fir'] + squad_rawdata['Mar'] + squad_rawdata['Pas'] + squad_rawdata['Tck'] + squad_rawdata['Ant'] + squad_rawdata['Dec'] + squad_rawdata['Pos'] + squad_rawdata['Agi'] + squad_rawdata['Bal'] )
+squad_rawdata['cwba'] =( ( ( squad_rawdata['cwba_key'] * 5) + (squad_rawdata['cwba_green'] * 3) + (squad_rawdata['cwba_blue'] * 1) ) / 47)
+squad_rawdata.cwba= squad_rawdata.cwba.round(1)
+    
+Full back - defend
+# calculates Full_back_Defend score
+squad_rawdata['fbd_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['fbd_green'] = ( squad_rawdata['Mar'] + squad_rawdata['Tck'] + squad_rawdata['Ant'] + squad_rawdata['Cnt'] + squad_rawdata['Pos'] + squad_rawdata['Pos'] )
+squad_rawdata['fbd_blue'] = ( squad_rawdata['Cro'] + squad_rawdata['Pas'] + squad_rawdata['Dec'] + squad_rawdata['Tea'] )
+squad_rawdata['fbd'] =( ( ( squad_rawdata['fbd_key'] * 5) + (squad_rawdata['fbd_green'] * 3) + (squad_rawdata['fbd_blue'] * 1) ) / 42)
+squad_rawdata.fbd= squad_rawdata.fbd.round(1)
+    
+Full back - support
+# calculates Full_back_Support score
+squad_rawdata['fbs_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['fbs_green'] = ( squad_rawdata['Mar'] + squad_rawdata['Tck'] + squad_rawdata['Ant'] + squad_rawdata['Cnt'] + squad_rawdata['Pos'] + squad_rawdata['Tea'] )
+squad_rawdata['fbs_blue'] = ( squad_rawdata['Cro'] + squad_rawdata['Dri'] + squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['Dec'] )
+squad_rawdata['fbs'] =( ( ( squad_rawdata['fbs_key'] * 5) + (squad_rawdata['fbs_green'] * 3) + (squad_rawdata['fbs_blue'] * 1) ) / 43)
+squad_rawdata.fbs= squad_rawdata.fbs.round(1)
+    
+Full back - attack
+# calculates Full_back_Attack score
+squad_rawdata['fba_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['fba_green'] = ( squad_rawdata['Cro'] + squad_rawdata['Mar'] + squad_rawdata['Tck'] + squad_rawdata['Ant'] + squad_rawdata['Pos'] + squad_rawdata['Tea'] )
+squad_rawdata['fba_blue'] = ( squad_rawdata['Dri'] + squad_rawdata['Fir'] + squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['Cnt'] + squad_rawdata['Dec'] + squad_rawdata['OtB'] + squad_rawdata['Agi'] )
+squad_rawdata['fba'] =( ( ( squad_rawdata['fba_key'] * 5) + (squad_rawdata['fba_green'] * 3) + (squad_rawdata['fba_blue'] * 1) ) / 46)
+squad_rawdata.fba= squad_rawdata.fba.round(1)
+    
+Inverted full back - defend
+# calculates Inverted_full_back_Defend score
+squad_rawdata['ifbd_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['ifbd_green'] = ( squad_rawdata['Hea'] + squad_rawdata['Mar'] + squad_rawdata['Tck'] + squad_rawdata['Pos'] + squad_rawdata['Str'] )
+squad_rawdata['ifbd_blue'] = ( squad_rawdata['Dri'] + squad_rawdata['Fir'] + squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['Agg'] + squad_rawdata['Ant'] + squad_rawdata['Bra'] + squad_rawdata['Cmp'] + squad_rawdata['Cnt'] + squad_rawdata['Dec'] + squad_rawdata['Agi'] + squad_rawdata['Jum'] )
+squad_rawdata['ifbd'] =( ( ( squad_rawdata['ifbd_key'] * 5) + (squad_rawdata['ifbd_green'] * 3) + (squad_rawdata['ifbd_blue'] * 1) ) / 47)
+squad_rawdata.ifbd= squad_rawdata.ifbd.round(1)
+    
+Inverted wing back - defend
+# calculates Inverted_wing_back_Defend score
+squad_rawdata['iwbd_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['iwbd_green'] = ( squad_rawdata['Pas'] + squad_rawdata['Tck'] + squad_rawdata['Ant'] + squad_rawdata['Dec'] + squad_rawdata['Pos'] + squad_rawdata['Tea'] )
+squad_rawdata['iwbd_blue'] = ( squad_rawdata['Fir'] + squad_rawdata['Mar'] + squad_rawdata['Tec'] + squad_rawdata['Com'] + squad_rawdata['Cnt'] + squad_rawdata['OtB'] + squad_rawdata['Agi'] )
+squad_rawdata['iwbd'] =( ( ( squad_rawdata['iwbd_key'] * 5) + (squad_rawdata['iwbd_green'] * 3) + (squad_rawdata['iwbd_blue'] * 1) ) / 45)
+squad_rawdata.iwbd= squad_rawdata.iwbd.round(1)
+    
+Inverted wing back - support
+# calculates Inverted_wing_back_Support score
+squad_rawdata['iwbs_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['iwbs_green'] = ( squad_rawdata['Fir'] + squad_rawdata['Pas'] + squad_rawdata['Tck'] + squad_rawdata['Cmp'] + squad_rawdata['Dec'] + squad_rawdata['Tea'] )
+squad_rawdata['iwbs_blue'] = ( squad_rawdata['Mar'] + squad_rawdata['Tec'] + squad_rawdata['Ant'] + squad_rawdata['Cnt'] + squad_rawdata['OtB'] + squad_rawdata['Pos'] + squad_rawdata['Vis'] + squad_rawdata['Agi'] )
+squad_rawdata['iwbs'] =( ( ( squad_rawdata['iwbs_key'] * 5) + (squad_rawdata['iwbs_green'] * 3) + (squad_rawdata['iwbs_blue'] * 1) ) / 46)
+squad_rawdata.iwbs= squad_rawdata.iwbs.round(1)
+    
+Inverted wing back - attack
+# calculates Inverted_wing_back_Attack score
+squad_rawdata['iwba_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['iwba_green'] = ( squad_rawdata['Fir'] + squad_rawdata['Pas'] + squad_rawdata['Tck'] + squad_rawdata['Tec'] + squad_rawdata['Cmp'] + squad_rawdata['Dec'] + squad_rawdata['OtB'] + squad_rawdata['Tea'] + squad_rawdata['Vis'] )
+squad_rawdata['iwba_blue'] = ( squad_rawdata['Cro'] + squad_rawdata['Dri'] + squad_rawdata['Lon'] + squad_rawdata['Mar'] + squad_rawdata['Ant'] + squad_rawdata['Cnt'] + squad_rawdata['Fla'] + squad_rawdata['Pos'] + squad_rawdata['Agi'] )
+squad_rawdata['iwba'] =( ( ( squad_rawdata['iwba_key'] * 5) + (squad_rawdata['iwba_green'] * 3) + (squad_rawdata['iwba_blue'] * 1) ) / 56)
+squad_rawdata.iwba= squad_rawdata.iwba.round(1)
+    
+Libero - defend
+# calculates Libero_Defend score
+squad_rawdata['ld_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Jum'] + squad_rawdata['Cmp'] )
+squad_rawdata['ld_green'] = ( squad_rawdata['Fir'] + squad_rawdata['Hea'] + squad_rawdata['Mar'] + squad_rawdata['Pas'] + squad_rawdata['Tck'] + squad_rawdata['Tec'] + squad_rawdata['Dec'] + squad_rawdata['Pos'] + squad_rawdata['Tea'] + squad_rawdata['Str'] )
+squad_rawdata['ld_blue'] = ( squad_rawdata['Ant'] + squad_rawdata['Bra'] + squad_rawdata['Cnt'] + squad_rawdata['Sta'] )
+squad_rawdata['ld'] =( ( ( squad_rawdata['ld_key'] * 5) + (squad_rawdata['ld_green'] * 3) + (squad_rawdata['ld_blue'] * 1) ) / 54)
+squad_rawdata.ld= squad_rawdata.ld.round(1)
+    
+Libero - support
+# calculates Libero_Support score
+squad_rawdata['ls_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Jum'] + squad_rawdata['Cmp'] )
+squad_rawdata['ls_green'] = ( squad_rawdata['Fir'] + squad_rawdata['Hea'] + squad_rawdata['Mar'] + squad_rawdata['Pas'] + squad_rawdata['Tck'] + squad_rawdata['Tec'] + squad_rawdata['Dec'] + squad_rawdata['Pos'] + squad_rawdata['Tea'] + squad_rawdata['Str'] )
+squad_rawdata['ls_blue'] = ( squad_rawdata['Dri'] + squad_rawdata['Ant'] + squad_rawdata['Bra'] + squad_rawdata['Cnt'] + squad_rawdata['Vis'] + squad_rawdata['Sta'] )
+squad_rawdata['ls'] =( ( ( squad_rawdata['ls_key'] * 5) + (squad_rawdata['ls_green'] * 3) + (squad_rawdata['ls_blue'] * 1) ) / 56)
+squad_rawdata.ls= squad_rawdata.ls.round(1)
+    
+No-nonsense centre back - defend
+# calculates No-nonsense_centre_back_Defend score
+squad_rawdata['ncbd_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Jum'] + squad_rawdata['Cmp'] )
+squad_rawdata['ncbd_green'] = ( squad_rawdata['Hea'] + squad_rawdata['Mar'] + squad_rawdata['Tck'] + squad_rawdata['Pos'] + squad_rawdata['Str'] )
+squad_rawdata['ncbd_blue'] = ( squad_rawdata['Agg'] + squad_rawdata['Ant'] + squad_rawdata['Bra'] + squad_rawdata['Cnt'] )
+squad_rawdata['ncbd'] =( ( ( squad_rawdata['ncbd_key'] * 5) + (squad_rawdata['ncbd_green'] * 3) + (squad_rawdata['ncbd_blue'] * 1) ) / 39)
+squad_rawdata.ncbd= squad_rawdata.ncbd.round(1)
+    
+No-nonsense centre back - stopper
+# calculates No-nonsense_centre_back_Stopper score
+squad_rawdata['ncbs_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Jum'] + squad_rawdata['Cmp'] )
+squad_rawdata['ncbs_green'] = ( squad_rawdata['Hea'] + squad_rawdata['Tck'] + squad_rawdata['Agg'] + squad_rawdata['Bra'] + squad_rawdata['Pos'] + squad_rawdata['Str'] )
+squad_rawdata['ncbs_blue'] = ( squad_rawdata['Mar'] + squad_rawdata['Ant'] + squad_rawdata['Cnt'] )
+squad_rawdata['ncbs'] =( ( ( squad_rawdata['ncbs_key'] * 5) + (squad_rawdata['ncbs_green'] * 3) + (squad_rawdata['ncbs_blue'] * 1) ) / 41)
+squad_rawdata.ncbs= squad_rawdata.ncbs.round(1)
+    
+No-nonsense centre back - cover
+# calculates No-nonsense_centre_back_Cover score
+squad_rawdata['ncbc_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Jum'] + squad_rawdata['Cmp'] )
+squad_rawdata['ncbc_green'] = ( squad_rawdata['Mar'] + squad_rawdata['Tck'] + squad_rawdata['Ant'] + squad_rawdata['Cnt'] + squad_rawdata['Pos'] )
+squad_rawdata['ncbc_blue'] = ( squad_rawdata['Hea'] + squad_rawdata['Bra'] + squad_rawdata['Str'] )
+squad_rawdata['ncbc'] =( ( ( squad_rawdata['ncbc_key'] * 5) + (squad_rawdata['ncbc_green'] * 3) + (squad_rawdata['ncbc_blue'] * 1) ) / 38)
+squad_rawdata.ncbc= squad_rawdata.ncbc.round(1)
+    
+No-nonsense full back - defend
+# calculates No-nonsense_full_back_Defend score
+squad_rawdata['nfbd_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['nfbd_green'] = ( squad_rawdata['Mar'] + squad_rawdata['Tck'] + squad_rawdata['Ant'] + squad_rawdata['Pos'] + squad_rawdata['Str'] )
+squad_rawdata['nfbd_blue'] = ( squad_rawdata['Hea'] + squad_rawdata['Agg'] + squad_rawdata['Bra'] + squad_rawdata['Cnt'] + squad_rawdata['Tea'] )
+squad_rawdata['nfbd'] =( ( ( squad_rawdata['nfbd_key'] * 5) + (squad_rawdata['nfbd_green'] * 3) + (squad_rawdata['nfbd_blue'] * 1) ) / 40)
+squad_rawdata.nfbd= squad_rawdata.nfbd.round(1)
+    
+Wide centre back - defend
+# calculates Wide_centre_back_Defend score
+squad_rawdata['wcbd_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Jum'] + squad_rawdata['Cmp'] )
+squad_rawdata['wcbd_green'] = ( squad_rawdata['Hea'] + squad_rawdata['Mar'] + squad_rawdata['Tck'] + squad_rawdata['Pos'] + squad_rawdata['Str'] )
+squad_rawdata['wcbd_blue'] = ( squad_rawdata['Dri'] + squad_rawdata['Fir'] + squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['Agg'] + squad_rawdata['Ant'] + squad_rawdata['Bra'] + squad_rawdata['Cnt'] + squad_rawdata['Dec'] + squad_rawdata['Wor'] + squad_rawdata['Agi'] )
+squad_rawdata['wcbd'] =( ( ( squad_rawdata['wcbd_key'] * 5) + (squad_rawdata['wcbd_green'] * 3) + (squad_rawdata['wcbd_blue'] * 1) ) / 46)
+squad_rawdata.wcbd= squad_rawdata.wcbd.round(1)
+    
+Wide centre back - support
+# calculates Wide_centre_back_Support score
+squad_rawdata['wcbs_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Jum'] + squad_rawdata['Cmp'] )
+squad_rawdata['wcbs_green'] = ( squad_rawdata['Dri'] + squad_rawdata['Hea'] + squad_rawdata['Mar'] + squad_rawdata['Tck'] + squad_rawdata['Pos'] + squad_rawdata['Str'] )
+squad_rawdata['wcbs_blue'] = ( squad_rawdata['Cro'] + squad_rawdata['Fir'] + squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['Agg'] + squad_rawdata['Ant'] + squad_rawdata['Bra'] + squad_rawdata['Cnt'] + squad_rawdata['Dec'] + squad_rawdata['OtB'] + squad_rawdata['Wor'] + squad_rawdata['Agi'] + squad_rawdata['Sta'] )
+squad_rawdata['wcbs'] =( ( ( squad_rawdata['wcbs_key'] * 5) + (squad_rawdata['wcbs_green'] * 3) + (squad_rawdata['wcbs_blue'] * 1) ) / 51)
+squad_rawdata.wcbs= squad_rawdata.wcbs.round(1)
+    
+Wide centre back - attack
+# calculates Wide_centre_back_Attack score
+squad_rawdata['wcba_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Jum'] + squad_rawdata['Cmp'] )
+squad_rawdata['wcba_green'] = ( squad_rawdata['Cro'] + squad_rawdata['Dri'] + squad_rawdata['Hea'] + squad_rawdata['Mar'] + squad_rawdata['Tck'] + squad_rawdata['OtB'] + squad_rawdata['Sta'] + squad_rawdata['Str'] )
+squad_rawdata['wcba_blue'] = ( squad_rawdata['Fir'] + squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['Agg'] + squad_rawdata['Ant'] + squad_rawdata['Bra'] + squad_rawdata['Cnt'] + squad_rawdata['Dec'] + squad_rawdata['Pos'] + squad_rawdata['Wor'] + squad_rawdata['Agi'] )
+squad_rawdata['wcba'] =( ( ( squad_rawdata['wcba_key'] * 5) + (squad_rawdata['wcba_green'] * 3) + (squad_rawdata['wcba_blue'] * 1) ) / 55)
+squad_rawdata.wcba= squad_rawdata.wcba.round(1)
+    
+Wing back - defend
+# calculates Wing_back_Defend score
+squad_rawdata['wbd_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['wbd_green'] = ( squad_rawdata['Mar'] + squad_rawdata['Tck'] + squad_rawdata['Ant'] + squad_rawdata['Pos'] + squad_rawdata['Tea'] )
+squad_rawdata['wbd_blue'] = ( squad_rawdata['Cro'] + squad_rawdata['Dri'] + squad_rawdata['Fir'] + squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['Cnt'] + squad_rawdata['Dec'] + squad_rawdata['OtB'] + squad_rawdata['Agi'] + squad_rawdata['Bal'] )
+squad_rawdata['wbd'] =( ( ( squad_rawdata['wbd_key'] * 5) + (squad_rawdata['wbd_green'] * 3) + (squad_rawdata['wbd_blue'] * 1) ) / 45)
+squad_rawdata.wbd= squad_rawdata.wbd.round(1)
+    
+Wing back - support
+# calculates Wing_back_Support score
+squad_rawdata['wbs_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['wbs_green'] = ( squad_rawdata['Cro'] + squad_rawdata['Dri'] + squad_rawdata['Mar'] + squad_rawdata['Tck'] + squad_rawdata['OtB'] + squad_rawdata['Tea'] )
+squad_rawdata['wbs_blue'] = ( squad_rawdata['Fir'] + squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['Ant'] + squad_rawdata['Cnt'] + squad_rawdata['Dec'] + squad_rawdata['Pos'] + squad_rawdata['Agi'] + squad_rawdata['Bal'] )
+squad_rawdata['wbs'] =( ( ( squad_rawdata['wbs_key'] * 5) + (squad_rawdata['wbs_green'] * 3) + (squad_rawdata['wbs_blue'] * 1) ) / 47)
+squad_rawdata.wbs= squad_rawdata.wbs.round(1)
+    
+Wing back - attack
+# calculates Wing_back_Attack score
+squad_rawdata['wba_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['wba_green'] = ( squad_rawdata['Cro'] + squad_rawdata['Dri'] + squad_rawdata['Tck'] + squad_rawdata['Tec'] + squad_rawdata['OtB'] + squad_rawdata['Tea'] )
+squad_rawdata['wba_blue'] = ( squad_rawdata['Fir'] + squad_rawdata['Mar'] + squad_rawdata['Pas'] + squad_rawdata['Ant'] + squad_rawdata['Cnt'] + squad_rawdata['Dec'] + squad_rawdata['Fla'] + squad_rawdata['Pos'] + squad_rawdata['Agi'] + squad_rawdata['Bal'] )
+squad_rawdata['wba'] =( ( ( squad_rawdata['wba_key'] * 5) + (squad_rawdata['wba_green'] * 3) + (squad_rawdata['wba_blue'] * 1) ) / 48)
+squad_rawdata.wba= squad_rawdata.wba.round(1)
+    
+Advanced playmaker - support
+# calculates Advanced_playmaker_Support score
+squad_rawdata['aps_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['aps_green'] = ( squad_rawdata['Fir'] + squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['Cmp'] + squad_rawdata['Dec'] + squad_rawdata['OtB'] + squad_rawdata['Tea'] + squad_rawdata['Vis'] )
+squad_rawdata['aps_blue'] = ( squad_rawdata['Dri'] + squad_rawdata['Ant'] + squad_rawdata['Fla'] + squad_rawdata['Agi'] )
+squad_rawdata['aps'] =( ( ( squad_rawdata['aps_key'] * 5) + (squad_rawdata['aps_green'] * 3) + (squad_rawdata['aps_blue'] * 1) ) / 48)
+squad_rawdata.aps= squad_rawdata.aps.round(1)
+    
+Advanced playmaker - attack
+# calculates Advanced_playmaker_Attack score
+squad_rawdata['apa_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['apa_green'] = ( squad_rawdata['Fir'] + squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['Cmp'] + squad_rawdata['Dec'] + squad_rawdata['OtB'] + squad_rawdata['Tea'] + squad_rawdata['Vis'] )
+squad_rawdata['apa_blue'] = ( squad_rawdata['Dri'] + squad_rawdata['Ant'] + squad_rawdata['Fla'] + squad_rawdata['Agi'] )
+squad_rawdata['apa'] =( ( ( squad_rawdata['apa_key'] * 5) + (squad_rawdata['apa_green'] * 3) + (squad_rawdata['apa_blue'] * 1) ) / 48)
+squad_rawdata.apa= squad_rawdata.apa.round(1)
+    
+Anchor - defend
+# calculates Anchor_Defend score
+squad_rawdata['ad_key'] = ( squad_rawdata['Wor'] + squad_rawdata['Sta'] + squad_rawdata['Acc'] + squad_rawdata['Pac'] )
+squad_rawdata['ad_green'] = ( squad_rawdata['Mar'] + squad_rawdata['Tck'] + squad_rawdata['Ant'] + squad_rawdata['Cnt'] + squad_rawdata['Dec'] + squad_rawdata['Pos'] )
+squad_rawdata['ad_blue'] = ( squad_rawdata['Cmp'] + squad_rawdata['Tea'] + squad_rawdata['Str'] )
+squad_rawdata['ad'] =( ( ( squad_rawdata['ad_key'] * 5) + (squad_rawdata['ad_green'] * 3) + (squad_rawdata['ad_blue'] * 1) ) / 41)
+squad_rawdata.ad= squad_rawdata.ad.round(1)
+    
+Attacking midfielder - support
+# calculates Attacking_midfielder_Support score
+squad_rawdata['ams_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['ams_green'] = ( squad_rawdata['Fir'] + squad_rawdata['Lon'] + squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['Ant'] + squad_rawdata['Dec'] + squad_rawdata['Fla'] + squad_rawdata['OtB'] )
+squad_rawdata['ams_blue'] = ( squad_rawdata['Dri'] + squad_rawdata['Cmp'] + squad_rawdata['Vis'] + squad_rawdata['Agi'] )
+squad_rawdata['ams'] =( ( ( squad_rawdata['ams_key'] * 5) + (squad_rawdata['ams_green'] * 3) + (squad_rawdata['ams_blue'] * 1) ) / 48)
+squad_rawdata.ams= squad_rawdata.ams.round(1)
+    
+Attacking midfielder - attack
+# calculates Attacking_midfielder_Attack score
+squad_rawdata['ama_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['ama_green'] = ( squad_rawdata['Dri'] + squad_rawdata['Fir'] + squad_rawdata['Lon'] + squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['Ant'] + squad_rawdata['Dec'] + squad_rawdata['Fla'] + squad_rawdata['OtB'] )
+squad_rawdata['ama_blue'] = ( squad_rawdata['Fin'] + squad_rawdata['Cmp'] + squad_rawdata['Vis'] + squad_rawdata['Agi'] )
+squad_rawdata['ama'] =( ( ( squad_rawdata['ama_key'] * 5) + (squad_rawdata['ama_green'] * 3) + (squad_rawdata['ama_blue'] * 1) ) / 51)
+squad_rawdata.ama= squad_rawdata.ama.round(1)
+    
+Ball winning midfielder - defend
+# calculates Ball_winning_midfielder_Defend score
+squad_rawdata['bwmd_key'] = ( squad_rawdata['Wor'] + squad_rawdata['Sta'] + squad_rawdata['Acc'] + squad_rawdata['Pac'] )
+squad_rawdata['bwmd_green'] = ( squad_rawdata['Tck'] + squad_rawdata['Agg'] + squad_rawdata['Ant'] + squad_rawdata['Tea'] )
+squad_rawdata['bwmd_blue'] = ( squad_rawdata['Mar'] + squad_rawdata['Bra'] + squad_rawdata['Cnt'] + squad_rawdata['Pos'] + squad_rawdata['Agi'] + squad_rawdata['Str'] )
+squad_rawdata['bwmd'] =( ( ( squad_rawdata['bwmd_key'] * 5) + (squad_rawdata['bwmd_green'] * 3) + (squad_rawdata['bwmd_blue'] * 1) ) / 38)
+squad_rawdata.bwmd= squad_rawdata.bwmd.round(1)
+    
+Ball winning midfielder - support
+# calculates Ball_winning_midfielder_Support score
+squad_rawdata['bwms_key'] = ( squad_rawdata['Wor'] + squad_rawdata['Sta'] + squad_rawdata['Acc'] + squad_rawdata['Pac'] )
+squad_rawdata['bwms_green'] = ( squad_rawdata['Tck'] + squad_rawdata['Agg'] + squad_rawdata['Ant'] + squad_rawdata['Tea'] )
+squad_rawdata['bwms_blue'] = ( squad_rawdata['Mar'] + squad_rawdata['Pas'] + squad_rawdata['Bra'] + squad_rawdata['Cnt'] + squad_rawdata['Agi'] + squad_rawdata['Str'] )
+squad_rawdata['bwms'] =( ( ( squad_rawdata['bwms_key'] * 5) + (squad_rawdata['bwms_green'] * 3) + (squad_rawdata['bwms_blue'] * 1) ) / 38)
+squad_rawdata.bwms= squad_rawdata.bwms.round(1)
+    
+Box to box midfielder - support
+# calculates Box_to_box_midfielder_Support score
+squad_rawdata['b2bs_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['b2bs_green'] = ( squad_rawdata['Pas'] + squad_rawdata['Tck'] + squad_rawdata['OtB'] + squad_rawdata['Tea'] )
+squad_rawdata['b2bs_blue'] = ( squad_rawdata['Dri'] + squad_rawdata['Fin'] + squad_rawdata['Fir'] + squad_rawdata['Lon'] + squad_rawdata['Tec'] + squad_rawdata['Agg'] + squad_rawdata['Ant'] + squad_rawdata['Cmp'] + squad_rawdata['Dec'] + squad_rawdata['Pos'] + squad_rawdata['Bal'] + squad_rawdata['Str'] )
+squad_rawdata['b2bs'] =( ( ( squad_rawdata['b2bs_key'] * 5) + (squad_rawdata['b2bs_green'] * 3) + (squad_rawdata['b2bs_blue'] * 1) ) / 44)
+squad_rawdata.b2bs= squad_rawdata.b2bs.round(1)
+    
+Carrilero - support
+# calculates Carrilero_Support score
+squad_rawdata['cars_key'] = ( squad_rawdata['Wor'] + squad_rawdata['Sta'] + squad_rawdata['Acc'] + squad_rawdata['Pac'] )
+squad_rawdata['cars_green'] = ( squad_rawdata['Fir'] + squad_rawdata['Pas'] + squad_rawdata['Tck'] + squad_rawdata['Dec'] + squad_rawdata['Pos'] + squad_rawdata['Tea'] )
+squad_rawdata['cars_blue'] = ( squad_rawdata['Tec'] + squad_rawdata['Ant'] + squad_rawdata['Cmp'] + squad_rawdata['Cnt'] + squad_rawdata['OtB'] + squad_rawdata['Vis'] )
+squad_rawdata['cars'] =( ( ( squad_rawdata['cars_key'] * 5) + (squad_rawdata['cars_green'] * 3) + (squad_rawdata['cars_blue'] * 1) ) / 44)
+squad_rawdata.cars= squad_rawdata.cars.round(1)
+    
+Central midfielder - defend
+# calculates Central_midfielder_Defend score
+squad_rawdata['cmd_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['cmd_green'] = ( squad_rawdata['Tck'] + squad_rawdata['Cnt'] + squad_rawdata['Dec'] + squad_rawdata['Pos'] + squad_rawdata['Tea'] )
+squad_rawdata['cmd_blue'] = ( squad_rawdata['Fir'] + squad_rawdata['Mar'] + squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['Agg'] + squad_rawdata['Ant'] + squad_rawdata['Cmp'] )
+squad_rawdata['cmd'] =( ( ( squad_rawdata['cmd_key'] * 5) + (squad_rawdata['cmd_green'] * 3) + (squad_rawdata['cmd_blue'] * 1) ) / 42)
+squad_rawdata.cmd= squad_rawdata.cmd.round(1)
+    
+Central midfielder - support
+# calculates Central_midfielder_Support score
+squad_rawdata['cms_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['cms_green'] = ( squad_rawdata['Fir'] + squad_rawdata['Pas'] + squad_rawdata['Tck'] + squad_rawdata['Dec'] + squad_rawdata['Tea'] )
+squad_rawdata['cms_blue'] = ( squad_rawdata['Tec'] + squad_rawdata['Ant'] + squad_rawdata['Cmp'] + squad_rawdata['Cnt'] + squad_rawdata['OtB'] + squad_rawdata['Vis'] )
+squad_rawdata['cms'] =( ( ( squad_rawdata['cms_key'] * 5) + (squad_rawdata['cms_green'] * 3) + (squad_rawdata['cms_blue'] * 1) ) / 41)
+squad_rawdata.cms= squad_rawdata.cms.round(1)
+    
+Central midfielder - attack
+# calculates Central_midfielder_Attack score
+squad_rawdata['cma_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['cma_green'] = ( squad_rawdata['Fir'] + squad_rawdata['Pas'] + squad_rawdata['Dec'] + squad_rawdata['OtB'] )
+squad_rawdata['cma_blue'] = ( squad_rawdata['Lon'] + squad_rawdata['Tck'] + squad_rawdata['Tec'] + squad_rawdata['Ant'] + squad_rawdata['Cmp'] + squad_rawdata['Tea'] + squad_rawdata['Vis'] )
+squad_rawdata['cma'] =( ( ( squad_rawdata['cma_key'] * 5) + (squad_rawdata['cma_green'] * 3) + (squad_rawdata['cma_blue'] * 1) ) / 39)
+squad_rawdata.cma= squad_rawdata.cma.round(1)
+    
+Deep lying playmaker - defend
+# calculates Deep_lying_playmaker_Defend score
+squad_rawdata['dlpd_key'] = ( squad_rawdata['Wor'] + squad_rawdata['Sta'] + squad_rawdata['Acc'] + squad_rawdata['Pac'] )
+squad_rawdata['dlpd_green'] = ( squad_rawdata['Fir'] + squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['Cmp'] + squad_rawdata['Dec'] + squad_rawdata['Tea'] + squad_rawdata['Vis'] )
+squad_rawdata['dlpd_blue'] = ( squad_rawdata['Tck'] + squad_rawdata['Ant'] + squad_rawdata['Pos'] + squad_rawdata['Bal'] )
+squad_rawdata['dlpd'] =( ( ( squad_rawdata['dlpd_key'] * 5) + (squad_rawdata['dlpd_green'] * 3) + (squad_rawdata['dlpd_blue'] * 1) ) / 45)
+squad_rawdata.dlpd= squad_rawdata.dlpd.round(1)
+    
+Deep lying playmaker - support
+# calculates Deep_lying_playmaker_Support score
+squad_rawdata['dlps_key'] = ( squad_rawdata['Wor'] + squad_rawdata['Sta'] + squad_rawdata['Acc'] + squad_rawdata['Pac'] )
+squad_rawdata['dlps_green'] = ( squad_rawdata['Fir'] + squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['Cmp'] + squad_rawdata['Dec'] + squad_rawdata['Tea'] + squad_rawdata['Vis'] )
+squad_rawdata['dlps_blue'] = ( squad_rawdata['Ant'] + squad_rawdata['OtB'] + squad_rawdata['Pos'] + squad_rawdata['Bal'] )
+squad_rawdata['dlps'] =( ( ( squad_rawdata['dlps_key'] * 5) + (squad_rawdata['dlps_green'] * 3) + (squad_rawdata['dlps_blue'] * 1) ) / 45)
+squad_rawdata.dlps= squad_rawdata.dlps.round(1)
+    
+Defensive midfielder - defend
+# calculates Defensive_midfielder_Defend score
+squad_rawdata['dmd_key'] = ( squad_rawdata['Wor'] + squad_rawdata['Sta'] + squad_rawdata['Acc'] + squad_rawdata['Pac'] )
+squad_rawdata['dmd_green'] = ( squad_rawdata['Tck'] + squad_rawdata['Ant'] + squad_rawdata['Cnt'] + squad_rawdata['Pos'] + squad_rawdata['Tea'] )
+squad_rawdata['dmd_blue'] = ( squad_rawdata['Mar'] + squad_rawdata['Pas'] + squad_rawdata['Agg'] + squad_rawdata['Cmp'] + squad_rawdata['Dec'] )
+squad_rawdata['dmd'] =( ( ( squad_rawdata['dmd_key'] * 5) + (squad_rawdata['dmd_green'] * 3) + (squad_rawdata['dmd_blue'] * 1) ) / 40)
+squad_rawdata.dmd= squad_rawdata.dmd.round(1)
+    
+Defensive midfielder - support
+# calculates Defensive_midfielder_Support score
+squad_rawdata['dms_key'] = ( squad_rawdata['Wor'] + squad_rawdata['Sta'] + squad_rawdata['Acc'] + squad_rawdata['Pac'] )
+squad_rawdata['dms_green'] = ( squad_rawdata['Tck'] + squad_rawdata['Ant'] + squad_rawdata['Cnt'] + squad_rawdata['Pos'] + squad_rawdata['Tea'] )
+squad_rawdata['dms_blue'] = ( squad_rawdata['Fir'] + squad_rawdata['Mar'] + squad_rawdata['Pas'] + squad_rawdata['Agg'] + squad_rawdata['Cmp'] + squad_rawdata['Dec'] + squad_rawdata['Str'] )
+squad_rawdata['dms'] =( ( ( squad_rawdata['dms_key'] * 5) + (squad_rawdata['dms_green'] * 3) + (squad_rawdata['dms_blue'] * 1) ) / 42)
+squad_rawdata.dms= squad_rawdata.dms.round(1)
+    
+Defensive winger - defend
+# calculates Defensive_winger_Defend score
+squad_rawdata['dwd_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['dwd_green'] = ( squad_rawdata['Tec'] + squad_rawdata['Ant'] + squad_rawdata['OtB'] + squad_rawdata['Pos'] + squad_rawdata['Tea'] )
+squad_rawdata['dwd_blue'] = ( squad_rawdata['Cro'] + squad_rawdata['Dri'] + squad_rawdata['Fir'] + squad_rawdata['Mar'] + squad_rawdata['Tck'] + squad_rawdata['Agg'] + squad_rawdata['Cnt'] + squad_rawdata['Dec'] )
+squad_rawdata['dwd'] =( ( ( squad_rawdata['dwd_key'] * 5) + (squad_rawdata['dwd_green'] * 3) + (squad_rawdata['dwd_blue'] * 1) ) / 43)
+squad_rawdata.dwd= squad_rawdata.dwd.round(1)
+    
+Defensive winger - support
+# calculates Defensive_winger_Support score
+squad_rawdata['dws_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['dws_green'] = ( squad_rawdata['Cro'] + squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['OtB'] + squad_rawdata['Tea'] )
+squad_rawdata['dws_blue'] = ( squad_rawdata['Dri'] + squad_rawdata['Fir'] + squad_rawdata['Mar'] + squad_rawdata['Pas'] + squad_rawdata['Tck'] + squad_rawdata['Agg'] + squad_rawdata['Ant'] + squad_rawdata['Cmp'] + squad_rawdata['Cnt'] + squad_rawdata['Dec'] + squad_rawdata['Pos'] )
+squad_rawdata['dws'] =( ( ( squad_rawdata['dws_key'] * 5) + (squad_rawdata['dws_green'] * 3) + (squad_rawdata['dws_blue'] * 1) ) / 46)
+squad_rawdata.dws= squad_rawdata.dws.round(1)
+    
+Enganche - support
+# calculates Enganche_Support score
+squad_rawdata['engs_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['engs_green'] = ( squad_rawdata['Fir'] + squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['Cmp'] + squad_rawdata['Dec'] + squad_rawdata['Vis'] )
+squad_rawdata['engs_blue'] = ( squad_rawdata['Dri'] + squad_rawdata['Ant'] + squad_rawdata['Fla'] + squad_rawdata['OtB'] + squad_rawdata['Tea'] + squad_rawdata['Agi'] )
+squad_rawdata['engs'] =( ( ( squad_rawdata['engs_key'] * 5) + (squad_rawdata['engs_green'] * 3) + (squad_rawdata['engs_blue'] * 1) ) / 44)
+squad_rawdata.engs= squad_rawdata.engs.round(1)
+    
+Half back - defend
+# calculates Half_back_Defend score
+squad_rawdata['hbd_key'] = ( squad_rawdata['Wor'] + squad_rawdata['Sta'] + squad_rawdata['Acc'] + squad_rawdata['Pac'] )
+squad_rawdata['hbd_green'] = ( squad_rawdata['Mar'] + squad_rawdata['Tck'] + squad_rawdata['Ant'] + squad_rawdata['Cmp'] + squad_rawdata['Cnt'] + squad_rawdata['Dec'] + squad_rawdata['Pos'] + squad_rawdata['Tea'] )
+squad_rawdata['hbd_blue'] = ( squad_rawdata['Fir'] + squad_rawdata['Pas'] + squad_rawdata['Agg'] + squad_rawdata['Bra'] + squad_rawdata['Jum'] + squad_rawdata['Str'] )
+squad_rawdata['hbd'] =( ( ( squad_rawdata['hbd_key'] * 5) + (squad_rawdata['hbd_green'] * 3) + (squad_rawdata['hbd_blue'] * 1) ) / 50)
+squad_rawdata.hbd= squad_rawdata.hbd.round(1)
+    
+Inside forward - support
+# calculates Inside_forward_Support score
+squad_rawdata['ifs_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['ifs_green'] = ( squad_rawdata['Dri'] + squad_rawdata['Fin'] + squad_rawdata['Fir'] + squad_rawdata['Tec'] + squad_rawdata['OtB'] + squad_rawdata['Agi'] )
+squad_rawdata['ifs_blue'] = ( squad_rawdata['Lon'] + squad_rawdata['Pas'] + squad_rawdata['Ant'] + squad_rawdata['Cmp'] + squad_rawdata['Fla'] + squad_rawdata['Vis'] + squad_rawdata['Bal'] )
+squad_rawdata['ifs'] =( ( ( squad_rawdata['ifs_key'] * 5) + (squad_rawdata['ifs_green'] * 3) + (squad_rawdata['ifs_blue'] * 1) ) / 45)
+squad_rawdata.ifs= squad_rawdata.ifs.round(1)
+    
+Inside forward - attack
+# calculates Inside_forward_Attack score
+squad_rawdata['ifa_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['ifa_green'] = ( squad_rawdata['Dri'] + squad_rawdata['Fin'] + squad_rawdata['Fir'] + squad_rawdata['Tec'] + squad_rawdata['Ant'] + squad_rawdata['OtB'] + squad_rawdata['Agi'] )
+squad_rawdata['ifa_blue'] = ( squad_rawdata['Lon'] + squad_rawdata['Pas'] + squad_rawdata['Cmp'] + squad_rawdata['Fla'] + squad_rawdata['Bal'] )
+squad_rawdata['ifa'] =( ( ( squad_rawdata['ifa_key'] * 5) + (squad_rawdata['ifa_green'] * 3) + (squad_rawdata['ifa_blue'] * 1) ) / 46)
+squad_rawdata.ifa= squad_rawdata.ifa.round(1)
+    
+Inverted winger - support
+# calculates Inverted_winger_Support score
+squad_rawdata['iws_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['iws_green'] = ( squad_rawdata['Cro'] + squad_rawdata['Dri'] + squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['Agi'] )
+squad_rawdata['iws_blue'] = ( squad_rawdata['Fir'] + squad_rawdata['Lon'] + squad_rawdata['Cmp'] + squad_rawdata['Dec'] + squad_rawdata['OtB'] + squad_rawdata['Vis'] + squad_rawdata['Bal'] )
+squad_rawdata['iws'] =( ( ( squad_rawdata['iws_key'] * 5) + (squad_rawdata['iws_green'] * 3) + (squad_rawdata['iws_blue'] * 1) ) / 42)
+squad_rawdata.iws= squad_rawdata.iws.round(1)
+    
+Inverted winger - attack
+# calculates Inverted_winger_Attack score
+squad_rawdata['iwa_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['iwa_green'] = ( squad_rawdata['Cro'] + squad_rawdata['Dri'] + squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['Agi'] )
+squad_rawdata['iwa_blue'] = ( squad_rawdata['Fir'] + squad_rawdata['Lon'] + squad_rawdata['Ant'] + squad_rawdata['Cmp'] + squad_rawdata['Dec'] + squad_rawdata['Fla'] + squad_rawdata['OtB'] + squad_rawdata['Vis'] + squad_rawdata['Bal'] )
+squad_rawdata['iwa'] =( ( ( squad_rawdata['iwa_key'] * 5) + (squad_rawdata['iwa_green'] * 3) + (squad_rawdata['iwa_blue'] * 1) ) / 44)
+squad_rawdata.iwa= squad_rawdata.iwa.round(1)
+    
+Mezzala - support
+# calculates Mezzala_Support score
+squad_rawdata['mezs_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['mezs_green'] = ( squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['Dec'] + squad_rawdata['OtB'] )
+squad_rawdata['mezs_blue'] = ( squad_rawdata['Dri'] + squad_rawdata['Fir'] + squad_rawdata['Lon'] + squad_rawdata['Tck'] + squad_rawdata['Ant'] + squad_rawdata['Cmp'] + squad_rawdata['Vis'] + squad_rawdata['Bal'] )
+squad_rawdata['mezs'] =( ( ( squad_rawdata['mezs_key'] * 5) + (squad_rawdata['mezs_green'] * 3) + (squad_rawdata['mezs_blue'] * 1) ) / 40)
+squad_rawdata.mezs= squad_rawdata.mezs.round(1)
+    
+Mezzala - attack
+# calculates Mezzala_Attack score
+squad_rawdata['meza_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['meza_green'] = ( squad_rawdata['Dri'] + squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['Dec'] + squad_rawdata['OtB'] + squad_rawdata['Vis'] )
+squad_rawdata['meza_blue'] = ( squad_rawdata['Fin'] + squad_rawdata['Fir'] + squad_rawdata['Lon'] + squad_rawdata['Ant'] + squad_rawdata['Cmp'] + squad_rawdata['Fla'] + squad_rawdata['Bal'] )
+squad_rawdata['meza'] =( ( ( squad_rawdata['meza_key'] * 5) + (squad_rawdata['meza_green'] * 3) + (squad_rawdata['meza_blue'] * 1) ) / 45)
+squad_rawdata.meza= squad_rawdata.meza.round(1)
+    
+Raumdeuter - attack
+# calculates Raumdeuter_Attack score
+squad_rawdata['raua_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['raua_green'] = ( squad_rawdata['Fin'] + squad_rawdata['Ant'] + squad_rawdata['Cmp'] + squad_rawdata['Cnt'] + squad_rawdata['Dec'] + squad_rawdata['OtB'] + squad_rawdata['Bal'] )
+squad_rawdata['raua_blue'] = ( squad_rawdata['Fir'] + squad_rawdata['Tec'] )
+squad_rawdata['raua'] =( ( ( squad_rawdata['raua_key'] * 5) + (squad_rawdata['raua_green'] * 3) + (squad_rawdata['raua_blue'] * 1) ) / 43)
+squad_rawdata.raua= squad_rawdata.raua.round(1)
+    
+Regista - support
+# calculates Regista_Support score
+squad_rawdata['regs_key'] = ( squad_rawdata['Wor'] + squad_rawdata['Sta'] + squad_rawdata['Acc'] + squad_rawdata['Pac'] )
+squad_rawdata['regs_green'] = ( squad_rawdata['Fir'] + squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['Cmp'] + squad_rawdata['Dec'] + squad_rawdata['Fla'] + squad_rawdata['OtB'] + squad_rawdata['Tea'] + squad_rawdata['Vis'] )
+squad_rawdata['regs_blue'] = ( squad_rawdata['Dri'] + squad_rawdata['Lon'] + squad_rawdata['Ant'] + squad_rawdata['Bal'] )
+squad_rawdata['regs'] =( ( ( squad_rawdata['regs_key'] * 5) + (squad_rawdata['regs_green'] * 3) + (squad_rawdata['regs_blue'] * 1) ) / 51)
+squad_rawdata.regs= squad_rawdata.regs.round(1)
+    
+Roaming playmaker - support
+# calculates Roaming_playmaker_Support score
+squad_rawdata['rps_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['rps_green'] = ( squad_rawdata['Fir'] + squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['Ant'] + squad_rawdata['Cmp'] + squad_rawdata['Dec'] + squad_rawdata['OtB'] + squad_rawdata['Tea'] + squad_rawdata['Vis'] )
+squad_rawdata['rps_blue'] = ( squad_rawdata['Dri'] + squad_rawdata['Lon'] + squad_rawdata['Cnt'] + squad_rawdata['Pos'] + squad_rawdata['Agi'] + squad_rawdata['Bal'] )
+squad_rawdata['rps'] =( ( ( squad_rawdata['rps_key'] * 5) + (squad_rawdata['rps_green'] * 3) + (squad_rawdata['rps_blue'] * 1) ) / 53)
+squad_rawdata.rps= squad_rawdata.rps.round(1)
+    
+Segundo volante - support
+# calculates Segundo_volante_Support score
+squad_rawdata['svs_key'] = ( squad_rawdata['Wor'] + squad_rawdata['Sta'] + squad_rawdata['Acc'] + squad_rawdata['Pac'] )
+squad_rawdata['svs_green'] = ( squad_rawdata['Mar'] + squad_rawdata['Pas'] + squad_rawdata['Tck'] + squad_rawdata['OtB'] + squad_rawdata['Pos'] )
+squad_rawdata['svs_blue'] = ( squad_rawdata['Fin'] + squad_rawdata['Fir'] + squad_rawdata['Lon'] + squad_rawdata['Ant'] + squad_rawdata['Cmp'] + squad_rawdata['Cnt'] + squad_rawdata['Dec'] + squad_rawdata['Bal'] + squad_rawdata['Str'] )
+squad_rawdata['svs'] =( ( ( squad_rawdata['svs_key'] * 5) + (squad_rawdata['svs_green'] * 3) + (squad_rawdata['svs_blue'] * 1) ) / 44)
+squad_rawdata.svs= squad_rawdata.svs.round(1)
+    
+Segundo volante - attack
+# calculates Segundo_volante_Attack score
+squad_rawdata['sva_key'] = ( squad_rawdata['Wor'] + squad_rawdata['Sta'] + squad_rawdata['Acc'] + squad_rawdata['Pac'] )
+squad_rawdata['sva_green'] = ( squad_rawdata['Fin'] + squad_rawdata['Lon'] + squad_rawdata['Pas'] + squad_rawdata['Tck'] + squad_rawdata['Ant'] + squad_rawdata['OtB'] + squad_rawdata['Pos'] )
+squad_rawdata['sva_blue'] = ( squad_rawdata['Fir'] + squad_rawdata['Mar'] + squad_rawdata['Cmp'] + squad_rawdata['Cnt'] + squad_rawdata['Dec'] + squad_rawdata['Bal'] )
+squad_rawdata['sva'] =( ( ( squad_rawdata['sva_key'] * 5) + (squad_rawdata['sva_green'] * 3) + (squad_rawdata['sva_blue'] * 1) ) / 47)
+squad_rawdata.sva= squad_rawdata.sva.round(1)
+    
+Shadow striker - attack
+# calculates Shadow_striker_Attack score
+squad_rawdata['ssa_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['ssa_green'] = ( squad_rawdata['Dri'] + squad_rawdata['Fin'] + squad_rawdata['Fir'] + squad_rawdata['Ant'] + squad_rawdata['Cmp'] + squad_rawdata['OtB'] )
+squad_rawdata['ssa_blue'] = ( squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['Cnt'] + squad_rawdata['Dec'] + squad_rawdata['Agi'] + squad_rawdata['Bal'] )
+squad_rawdata['ssa'] =( ( ( squad_rawdata['ssa_key'] * 5) + (squad_rawdata['ssa_green'] * 3) + (squad_rawdata['ssa_blue'] * 1) ) / 44)
+squad_rawdata.ssa= squad_rawdata.ssa.round(1)
+    
+Wide midfielder - defend
+# calculates Wide_midfielder_Defend score
+squad_rawdata['wmd_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['wmd_green'] = ( squad_rawdata['Pas'] + squad_rawdata['Tck'] + squad_rawdata['Cnt'] + squad_rawdata['Dec'] + squad_rawdata['Pos'] + squad_rawdata['Tea'] )
+squad_rawdata['wmd_blue'] = ( squad_rawdata['Cro'] + squad_rawdata['Fir'] + squad_rawdata['Mar'] + squad_rawdata['Tec'] + squad_rawdata['Ant'] + squad_rawdata['Cmp'] )
+squad_rawdata['wmd'] =( ( ( squad_rawdata['wmd_key'] * 5) + (squad_rawdata['wmd_green'] * 3) + (squad_rawdata['wmd_blue'] * 1) ) / 44)
+squad_rawdata.wmd= squad_rawdata.wmd.round(1)
+    
+Wide midfielder - support
+# calculates Wide_midfielder_Support score
+squad_rawdata['wms_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['wms_green'] = ( squad_rawdata['Pas'] + squad_rawdata['Tck'] + squad_rawdata['Dec'] + squad_rawdata['Tea'] )
+squad_rawdata['wms_blue'] = ( squad_rawdata['Cro'] + squad_rawdata['Fir'] + squad_rawdata['Tec'] + squad_rawdata['Ant'] + squad_rawdata['Cmp'] + squad_rawdata['Cnt'] + squad_rawdata['OtB'] + squad_rawdata['Pos'] + squad_rawdata['Vis'] )
+squad_rawdata['wms'] =( ( ( squad_rawdata['wms_key'] * 5) + (squad_rawdata['wms_green'] * 3) + (squad_rawdata['wms_blue'] * 1) ) / 41)
+squad_rawdata.wms= squad_rawdata.wms.round(1)
+    
+Wide midfielder - attack
+# calculates Wide_midfielder_Attack score
+squad_rawdata['wma_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['wma_green'] = ( squad_rawdata['Cro'] + squad_rawdata['Fir'] + squad_rawdata['Pas'] + squad_rawdata['Dec'] + squad_rawdata['Tea'] )
+squad_rawdata['wma_blue'] = ( squad_rawdata['Tck'] + squad_rawdata['Tec'] + squad_rawdata['Ant'] + squad_rawdata['Cmp'] + squad_rawdata['OtB'] + squad_rawdata['Vis'] )
+squad_rawdata['wma'] =( ( ( squad_rawdata['wma_key'] * 5) + (squad_rawdata['wma_green'] * 3) + (squad_rawdata['wma_blue'] * 1) ) / 41)
+squad_rawdata.wma= squad_rawdata.wma.round(1)
+    
+Wide playmaker - support
+# calculates Wide_playmaker_Support score
+squad_rawdata['wps_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['wps_green'] = ( squad_rawdata['Fir'] + squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['Cmp'] + squad_rawdata['Dec'] + squad_rawdata['Tea'] + squad_rawdata['Vis'] )
+squad_rawdata['wps_blue'] = ( squad_rawdata['Dri'] + squad_rawdata['OtB'] + squad_rawdata['Agi'] )
+squad_rawdata['wps'] =( ( ( squad_rawdata['wps_key'] * 5) + (squad_rawdata['wps_green'] * 3) + (squad_rawdata['wps_blue'] * 1) ) / 44)
+squad_rawdata.wps= squad_rawdata.wps.round(1)
+    
+Wide playmaker - attack
+# calculates Wide_playmaker_Attack score
+squad_rawdata['wpa_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['wpa_green'] = ( squad_rawdata['Dri'] + squad_rawdata['Fir'] + squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['Cmp'] + squad_rawdata['Dec'] + squad_rawdata['OtB'] + squad_rawdata['Tea'] + squad_rawdata['Vis'] )
+squad_rawdata['wpa_blue'] = ( squad_rawdata['Ant'] + squad_rawdata['Fla'] + squad_rawdata['Agi'] )
+squad_rawdata['wpa'] =( ( ( squad_rawdata['wpa_key'] * 5) + (squad_rawdata['wpa_green'] * 3) + (squad_rawdata['wpa_blue'] * 1) ) / 50)
+squad_rawdata.wpa= squad_rawdata.wpa.round(1)
+    
+Wide target forward - support
+# calculates Wide_target_forward_Support score
+squad_rawdata['wtfs_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['wtfs_green'] = ( squad_rawdata['Hea'] + squad_rawdata['Bra'] + squad_rawdata['Tea'] + squad_rawdata['Jum'] + squad_rawdata['Str'] )
+squad_rawdata['wtfs_blue'] = ( squad_rawdata['Cro'] + squad_rawdata['Fir'] + squad_rawdata['Ant'] + squad_rawdata['OtB'] + squad_rawdata['Bal'] )
+squad_rawdata['wtfs'] =( ( ( squad_rawdata['wtfs_key'] * 5) + (squad_rawdata['wtfs_green'] * 3) + (squad_rawdata['wtfs_blue'] * 1) ) / 40)
+squad_rawdata.wtfs= squad_rawdata.wtfs.round(1)
+    
+Wide target forward - attack
+# calculates Wide_target_forward_Attack score
+squad_rawdata['wtfa_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['wtfa_green'] = ( squad_rawdata['Hea'] + squad_rawdata['Bra'] + squad_rawdata['OtB'] + squad_rawdata['Jum'] + squad_rawdata['Str'] )
+squad_rawdata['wtfa_blue'] = ( squad_rawdata['Cro'] + squad_rawdata['Fin'] + squad_rawdata['Fir'] + squad_rawdata['Ant'] + squad_rawdata['Tea'] + squad_rawdata['Bal'] )
+squad_rawdata['wtfa'] =( ( ( squad_rawdata['wtfa_key'] * 5) + (squad_rawdata['wtfa_green'] * 3) + (squad_rawdata['wtfa_blue'] * 1) ) / 41)
+squad_rawdata.wtfa= squad_rawdata.wtfa.round(1)
+    
+Winger - support
+# calculates Winger_Support score
+squad_rawdata['ws_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['ws_green'] = ( squad_rawdata['Cro'] + squad_rawdata['Dri'] + squad_rawdata['Tec'] + squad_rawdata['Agi'] )
+squad_rawdata['ws_blue'] = ( squad_rawdata['Fir'] + squad_rawdata['Pas'] + squad_rawdata['OtB'] + squad_rawdata['Bal'] )
+squad_rawdata['ws'] =( ( ( squad_rawdata['ws_key'] * 5) + (squad_rawdata['ws_green'] * 3) + (squad_rawdata['ws_blue'] * 1) ) / 36)
+squad_rawdata.ws= squad_rawdata.ws.round(1)
+    
+Winger - attack
+# calculates Winger_Attack score
+squad_rawdata['wa_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Sta'] + squad_rawdata['Wor'] )
+squad_rawdata['wa_green'] = ( squad_rawdata['Cro'] + squad_rawdata['Dri'] + squad_rawdata['Tec'] + squad_rawdata['Agi'] )
+squad_rawdata['wa_blue'] = ( squad_rawdata['Fir'] + squad_rawdata['Pas'] + squad_rawdata['Ant'] + squad_rawdata['Fla'] + squad_rawdata['OtB'] + squad_rawdata['Bal'] )
+squad_rawdata['wa'] =( ( ( squad_rawdata['wa_key'] * 5) + (squad_rawdata['wa_green'] * 3) + (squad_rawdata['wa_blue'] * 1) ) / 38)
+squad_rawdata.wa= squad_rawdata.wa.round(1)
+    
+Advanced forward - attack
+# calculates Advanced_forward_Attack score
+squad_rawdata['afa_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Fin'] )
+squad_rawdata['afa_green'] = ( squad_rawdata['Dri'] + squad_rawdata['Fir'] + squad_rawdata['Tec'] + squad_rawdata['Cmp'] + squad_rawdata['OtB'] )
+squad_rawdata['afa_blue'] = ( squad_rawdata['Pas'] + squad_rawdata['Ant'] + squad_rawdata['Dec'] + squad_rawdata['Wor'] + squad_rawdata['Agi'] + squad_rawdata['Bal'] + squad_rawdata['Sta'] )
+squad_rawdata['afa'] =( ( ( squad_rawdata['afa_key'] * 5) + (squad_rawdata['afa_green'] * 3) + (squad_rawdata['afa_blue'] * 1) ) / 37)
+squad_rawdata.afa= squad_rawdata.afa.round(1)
+    
+Complete forward - support
+# calculates Complete_forward_Support score
+squad_rawdata['cfs_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Fin'] )
+squad_rawdata['cfs_green'] = ( squad_rawdata['Dri'] + squad_rawdata['Fir'] + squad_rawdata['Hea'] + squad_rawdata['Lon'] + squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['Ant'] + squad_rawdata['Cmp'] + squad_rawdata['Dec'] + squad_rawdata['OtB'] + squad_rawdata['Vis'] + squad_rawdata['Agi'] + squad_rawdata['Str'] )
+squad_rawdata['cfs_blue'] = ( squad_rawdata['Tea'] + squad_rawdata['Wor'] + squad_rawdata['Bal'] + squad_rawdata['Jum'] + squad_rawdata['Sta'] )
+squad_rawdata['cfs'] =( ( ( squad_rawdata['cfs_key'] * 5) + (squad_rawdata['cfs_green'] * 3) + (squad_rawdata['cfs_blue'] * 1) ) / 59)
+squad_rawdata.cfs= squad_rawdata.cfs.round(1)
+    
+Complete forward - attack
+# calculates Complete_forward_Attack score
+squad_rawdata['cfa_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Fin'] )
+squad_rawdata['cfa_green'] = ( squad_rawdata['Dri'] + squad_rawdata['Fir'] + squad_rawdata['Hea'] + squad_rawdata['Tec'] + squad_rawdata['Ant'] + squad_rawdata['Cmp'] + squad_rawdata['OtB'] + squad_rawdata['Agi'] + squad_rawdata['Str'] )
+squad_rawdata['cfa_blue'] = ( squad_rawdata['Lon'] + squad_rawdata['Pas'] + squad_rawdata['Dec'] + squad_rawdata['Tea'] + squad_rawdata['Vis'] + squad_rawdata['Wor'] + squad_rawdata['Bal'] + squad_rawdata['Jum'] + squad_rawdata['Sta'] )
+squad_rawdata['cfa'] =( ( ( squad_rawdata['cfa_key'] * 5) + (squad_rawdata['cfa_green'] * 3) + (squad_rawdata['cfa_blue'] * 1) ) / 51)
+squad_rawdata.cfa= squad_rawdata.cfa.round(1)
+    
+Deep lying forward - support
+# calculates Deep_lying_forward_Support score
+squad_rawdata['dlfs_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Fin'] )
+squad_rawdata['dlfs_green'] = ( squad_rawdata['Fir'] + squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['Cmp'] + squad_rawdata['Dec'] + squad_rawdata['OtB'] + squad_rawdata['Tea'] )
+squad_rawdata['dlfs_blue'] = ( squad_rawdata['Ant'] + squad_rawdata['Fla'] + squad_rawdata['Vis'] + squad_rawdata['Bal'] + squad_rawdata['Str'] )
+squad_rawdata['dlfs'] =( ( ( squad_rawdata['dlfs_key'] * 5) + (squad_rawdata['dlfs_green'] * 3) + (squad_rawdata['dlfs_blue'] * 1) ) / 41)
+squad_rawdata.dlfs= squad_rawdata.dlfs.round(1)
+    
+Deep lying forward - attack
+# calculates Deep_lying_forward_Attack score
+squad_rawdata['dlfa_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Fin'] )
+squad_rawdata['dlfa_green'] = ( squad_rawdata['Fir'] + squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['Cmp'] + squad_rawdata['Dec'] + squad_rawdata['OtB'] + squad_rawdata['Tea'] )
+squad_rawdata['dlfa_blue'] = ( squad_rawdata['Dri'] + squad_rawdata['Ant'] + squad_rawdata['Fla'] + squad_rawdata['Vis'] + squad_rawdata['Bal'] + squad_rawdata['Str'] )
+squad_rawdata['dlfa'] =( ( ( squad_rawdata['dlfa_key'] * 5) + (squad_rawdata['dlfa_green'] * 3) + (squad_rawdata['dlfa_blue'] * 1) ) / 42)
+squad_rawdata.dlfa= squad_rawdata.dlfa.round(1)
+    
+False nine - support
+# calculates False_nine_Support score
+squad_rawdata['f9s_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Fin'] )
+squad_rawdata['f9s_green'] = ( squad_rawdata['Dri'] + squad_rawdata['Fir'] + squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['Cmp'] + squad_rawdata['Dec'] + squad_rawdata['OtB'] + squad_rawdata['Vis'] + squad_rawdata['Agi'] )
+squad_rawdata['f9s_blue'] = ( squad_rawdata['Ant'] + squad_rawdata['Fla'] + squad_rawdata['Tea'] + squad_rawdata['Bal'] )
+squad_rawdata['f9s'] =( ( ( squad_rawdata['f9s_key'] * 5) + (squad_rawdata['f9s_green'] * 3) + (squad_rawdata['f9s_blue'] * 1) ) / 46)
+squad_rawdata.f9s= squad_rawdata.f9s.round(1)
+    
+Poacher - attack
+# calculates Poacher_Attack score
+squad_rawdata['pa_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Fin'] )
+squad_rawdata['pa_green'] = ( squad_rawdata['Ant'] + squad_rawdata['Cmp'] + squad_rawdata['OtB'] )
+squad_rawdata['pa_blue'] = ( squad_rawdata['Fir'] + squad_rawdata['Hea'] + squad_rawdata['Tec'] + squad_rawdata['Dec'] )
+squad_rawdata['pa'] =( ( ( squad_rawdata['pa_key'] * 5) + (squad_rawdata['pa_green'] * 3) + (squad_rawdata['pa_blue'] * 1) ) / 28)
+squad_rawdata.pa= squad_rawdata.pa.round(1)
+    
+Pressing forward - defend
+# calculates Pressing_forward_Defend score
+squad_rawdata['pfd_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Fin'] )
+squad_rawdata['pfd_green'] = ( squad_rawdata['Agg'] + squad_rawdata['Ant'] + squad_rawdata['Bra'] + squad_rawdata['Dec'] + squad_rawdata['Tea'] + squad_rawdata['Wor'] + squad_rawdata['Sta'] )
+squad_rawdata['pfd_blue'] = ( squad_rawdata['Fir'] + squad_rawdata['Cmp'] + squad_rawdata['Cnt'] + squad_rawdata['Agi'] + squad_rawdata['Bal'] + squad_rawdata['Str'] )
+squad_rawdata['pfd'] =( ( ( squad_rawdata['pfd_key'] * 5) + (squad_rawdata['pfd_green'] * 3) + (squad_rawdata['pfd_blue'] * 1) ) / 42)
+squad_rawdata.pfd= squad_rawdata.pfd.round(1)
+    
+Pressing forward - support
+# calculates Pressing_forward_Support score
+squad_rawdata['pfs_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Fin'] )
+squad_rawdata['pfs_green'] = ( squad_rawdata['Agg'] + squad_rawdata['Ant'] + squad_rawdata['Bra'] + squad_rawdata['Dec'] + squad_rawdata['Tea'] + squad_rawdata['Wor'] + squad_rawdata['Sta'] )
+squad_rawdata['pfs_blue'] = ( squad_rawdata['Fir'] + squad_rawdata['Pas'] + squad_rawdata['Cmp'] + squad_rawdata['Cnt'] + squad_rawdata['OtB'] + squad_rawdata['Agi'] + squad_rawdata['Bal'] + squad_rawdata['Str'] )
+squad_rawdata['pfs'] =( ( ( squad_rawdata['pfs_key'] * 5) + (squad_rawdata['pfs_green'] * 3) + (squad_rawdata['pfs_blue'] * 1) ) / 44)
+squad_rawdata.pfs= squad_rawdata.pfs.round(1)
+    
+Pressing forward - attack
+# calculates Pressing_forward_Attack score
+squad_rawdata['pfa_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Fin'] )
+squad_rawdata['pfa_green'] = ( squad_rawdata['Agg'] + squad_rawdata['Ant'] + squad_rawdata['Bra'] + squad_rawdata['OtB'] + squad_rawdata['Tea'] + squad_rawdata['Wor'] + squad_rawdata['Sta'] )
+squad_rawdata['pfa_blue'] = ( squad_rawdata['Fir'] + squad_rawdata['Cmp'] + squad_rawdata['Cnt'] + squad_rawdata['Dec'] + squad_rawdata['Agi'] + squad_rawdata['Bal'] + squad_rawdata['Str'] )
+squad_rawdata['pfa'] =( ( ( squad_rawdata['pfa_key'] * 5) + (squad_rawdata['pfa_green'] * 3) + (squad_rawdata['pfa_blue'] * 1) ) / 43)
+squad_rawdata.pfa= squad_rawdata.pfa.round(1)
+    
+Target forward - support
+# calculates Target_forward_Support score
+squad_rawdata['tfs_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Fin'] )
+squad_rawdata['tfs_green'] = ( squad_rawdata['Hea'] + squad_rawdata['Bra'] + squad_rawdata['Tea'] + squad_rawdata['Bal'] + squad_rawdata['Jum'] + squad_rawdata['Str'] )
+squad_rawdata['tfs_blue'] = ( squad_rawdata['Fir'] + squad_rawdata['Agg'] + squad_rawdata['Ant'] + squad_rawdata['Cmp'] + squad_rawdata['Dec'] + squad_rawdata['OtB'] )
+squad_rawdata['tfs'] =( ( ( squad_rawdata['tfs_key'] * 5) + (squad_rawdata['tfs_green'] * 3) + (squad_rawdata['tfs_blue'] * 1) ) / 39)
+squad_rawdata.tfs= squad_rawdata.tfs.round(1)
+    
+Target forward - attack
+# calculates Target_forward_Attack score
+squad_rawdata['tfa_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Fin'] )
+squad_rawdata['tfa_green'] = ( squad_rawdata['Hea'] + squad_rawdata['Bra'] + squad_rawdata['Cmp'] + squad_rawdata['OtB'] + squad_rawdata['Bal'] + squad_rawdata['Jum'] + squad_rawdata['Str'] )
+squad_rawdata['tfa_blue'] = ( squad_rawdata['Fir'] + squad_rawdata['Agg'] + squad_rawdata['Ant'] + squad_rawdata['Dec'] + squad_rawdata['Tea'] )
+squad_rawdata['tfa'] =( ( ( squad_rawdata['tfa_key'] * 5) + (squad_rawdata['tfa_green'] * 3) + (squad_rawdata['tfa_blue'] * 1) ) / 41)
+squad_rawdata.tfa= squad_rawdata.tfa.round(1)
+    
+Trequartista - attack
+# calculates Trequartista_Attack score
+squad_rawdata['trea_key'] = ( squad_rawdata['Acc'] + squad_rawdata['Pac'] + squad_rawdata['Fin'] )
+squad_rawdata['trea_green'] = ( squad_rawdata['Dri'] + squad_rawdata['Fir'] + squad_rawdata['Pas'] + squad_rawdata['Tec'] + squad_rawdata['Cmp'] + squad_rawdata['Dec'] + squad_rawdata['Fla'] + squad_rawdata['OtB'] + squad_rawdata['Vis'] )
+squad_rawdata['trea_blue'] = ( squad_rawdata['Ant'] + squad_rawdata['Agi'] + squad_rawdata['Bal'] )
+squad_rawdata['trea'] =( ( ( squad_rawdata['trea_key'] * 5) + (squad_rawdata['trea_green'] * 3) + (squad_rawdata['trea_blue'] * 1) ) / 45)
+squad_rawdata.trea= squad_rawdata.trea.round(1)
+    
